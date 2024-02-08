@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="flex p-10 space-x-5 justify-center mx-auto items-center">
+    <div className="flex p-8 space-x-5 justify-center mx-auto items-center">
       <div>
         <Image
           alt="header"

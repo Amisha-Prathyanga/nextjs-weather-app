@@ -2,9 +2,7 @@ import axios from "axios";
 
 // Function to create Axios instance with default configurations
 const createAxiosInstance = () => {
-  const instance = axios.create({
-    timeout: 10000, // 10 seconds timeout
-  });
+  const instance = axios.create({});
 
   // Request interceptor
   instance.interceptors.request.use(

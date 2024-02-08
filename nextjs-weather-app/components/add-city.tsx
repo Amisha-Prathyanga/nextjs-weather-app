@@ -7,7 +7,7 @@ interface AddCityProps {}
 
 const AddCity: FC<AddCityProps> = () => {
   return (
-    <div className="mx-auto flex justify-center">
+    <div className="mx-auto flex justify-center pb-10">
       <InputGroup>
         <Form.Control
           className="bg-[#333333] p-1 px-4 border-[#333333] bor rounded-l-md"

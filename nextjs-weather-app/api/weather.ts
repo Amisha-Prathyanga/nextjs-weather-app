@@ -1,15 +1,12 @@
-import { CityIdArrayType, CityIdType } from "@/types/weather";
+import { CityIdType } from "@/types/weather";
 import createAxiosInstance from "@/utils/axiosInterceptor";
 
 const axiosInstance = createAxiosInstance();
 
 export const fetchWeatherData = async (CityId: CityIdType) => {
   const response = await axiosInstance.get(
-    `${process.env.OPEN_WEATHER_MAP_URL}/data/2.5/group?id=${CityId}&units=metric&appid=${process.env.REACT_APP_API_TOKEN}`
+    `${"http://api.openweathermap.org"}/data/2.5/group?id=${CityId}&units=metric&appid=${"2ff5a40ec7055129bdbd497ce586197d"}`
   );
-  if (response.status === 200) {
-    throw new Error("Could not fetch data from the source");
-  }
 
-  return response.data;
+  return response.data.list;
 };

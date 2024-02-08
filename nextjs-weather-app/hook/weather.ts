@@ -1,27 +1,28 @@
+"use client";
+
 import { fetchWeatherData } from "@/api/weather";
 import { CityIdArrayType, CityIdType } from "@/types/weather";
 import { useQuery } from "react-query";
 
-export const FetchWeatherData = async (CityIdArray: CityIdArrayType) => {
+export const useFetchWeatherData = (CityIdArray: CityIdArrayType) => {
   return useQuery({
-    queryKey: "weatherData",
+    queryKey: ["weather-data"],
     queryFn: async () => {
       const response = await fetchWeatherData(CityIdArray);
+
       return response;
     },
     cacheTime: 5 * 60 * 1000, // 5 minutes
-    refetchOnWindowFocus: false,
   });
 };
 
-export const FetchCityWeatherData = async (CityId: CityIdType) => {
+export const useFetchCityWeatherData = (CityId: CityIdType) => {
   return useQuery({
-    queryKey: ["weatherData",CityId],
+    queryKey: ["weather-data", CityId],
     queryFn: async () => {
       const response = await fetchWeatherData(CityId);
       return response;
     },
     cacheTime: 5 * 60 * 1000, // 5 minutes
-    refetchOnWindowFocus: false,
   });
 };
