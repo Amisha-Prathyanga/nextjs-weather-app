@@ -25,11 +25,15 @@ const DefaultCities: FC<DefaultCitiesProps> = () => {
               <WeatherCard
                 data={item}
                 key={index}
-                className="min-w-[420px] h-[280px]"
+                className= "min-w-[390px] h-[280px]"
               />
             )}
           />
         )}
+        <div>
+        {isError && <p>Error fetching weather data</p>}
+        </div>
+
       </div>
     </div>
   );
