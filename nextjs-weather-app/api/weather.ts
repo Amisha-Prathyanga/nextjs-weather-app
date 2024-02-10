@@ -5,7 +5,7 @@ const axiosInstance = createAxiosInstance();
 
 export const fetchWeatherData = async (CityId: CityIdType) => {
   const response = await axiosInstance.get(
-    `${"http://api.openweathermap.org"}/data/2.5/group?id=${CityId}&units=metric&appid=${"2ff5a40ec7055129bdbd497ce586197d"}`
+    `${process.env.NEXT_PUBLIC_OPEN_WEATHER_MAP_URL}/data/2.5/group?id=${CityId}&units=metric&appid=${process.env.NEXT_PUBLIC_APP_API_TOKEN}`
   );
 
   return response.data.list;
